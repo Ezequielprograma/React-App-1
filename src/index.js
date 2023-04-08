@@ -25,20 +25,44 @@ import reportWebVitals from './reportWebVitals';
 /*LECCION 2: Elementos Anidados */
 
 //creamos elementos por separado
-var listElement1 = React.createElement('li',{id:'item1',type:'circle'},'Uno');
-var listElement2 = React.createElement('li',{id:'item2',type:'disc'},'Dos');
-var listElement3 = React.createElement('li',{id:'item3',type:'square'},'Tres');
-var listElement4 = React.createElement('li',{id:'item4',type:'1'},'Cuatro');
-var listElement5 = React.createElement('li',{id:'item5',type:'a'},'Cinco');
-var listElement6 = React.createElement('li',{id:'item6',type:'A'},'Seis');
+//var listElement1 = React.createElement('li',{id:'item1',type:'circle'},'Uno');
+//var listElement2 = React.createElement('li',{id:'item2',type:'disc'},'Dos');
+//var listElement3 = React.createElement('li',{id:'item3',type:'square'},'Tres');
+//var listElement4 = React.createElement('li',{id:'item4',type:'1'},'Cuatro');
+//var listElement5 = React.createElement('li',{id:'item5',type:'a'},'Cinco');
+//var listElement6 = React.createElement('li',{id:'item6',type:'A'},'Seis');
 
 //creamos un arreglo de elementos, en este caso los items de una lista
-var elements = [listElement1,listElement2,listElement3,listElement4,listElement5,listElement6];
+//var elements = [listElement1,listElement2,listElement3,listElement4,listElement5,listElement6];
 
 //definimos un elelento de tipo lista ordenada y le adjutamos el arreglo anterior
-var list0Elements = React.createElement('ul','',elements);
+//var listOfElements = React.createElement('ul','',elements);
 
 //renderizamos el elemento en el contenedor con el id "list"
-ReactDOM.render(list0Elements,document.getElementById('list'));
+//ReactDOM.render(listOfElements,document.getElementById('list'));
+
+
+/*LECCION 3: Fabrica de elementos */
+
+
+//otra forma de crear elementos anidados o listas es con el metodo createFactory 
+var createListElement = React.createFactory('li');//definimos la variable que va  a ser la fabrica
+
+//creamos cada uno de los elementos que van a conformar la lista utilizando como tipo de elemento la fabrica previamente creada
+var listElement1 = createListElement({id:'item1',type:'circle'},'Uno');
+var listElement2 = createListElement({id:'item2',type:'disc'},'Dos');
+var listElement3 = createListElement({id:'item3',type:'square'},'Tres');
+var listElement4 = createListElement({id:'item4',type:'1'},'Cuatro');
+var listElement5 = createListElement({id:'item5',type:'a'},'Cinco');
+var listElement6 = createListElement({id:'item6',type:'A'},'Seis');
+
+//creamos un elemento donde agrupamos las variables previamente definidas
+var elements = [listElement1,listElement2,listElement3,listElement4,listElement5,listElement6];
+
+//creamos una variable que contendra la lista de elementos asociados 
+var listOfElements = React.createElement('lu',{id:'lista'},elements);
+
+//renderizamos la variable lista en a pagina
+ReactDOM.render(listOfElements,document.getElementById('list2'));
 
 reportWebVitals();
