@@ -13,3 +13,52 @@ code {
     color:blue;
     cursor: pointer;
 }
+
+#E5_lu{
+  color: white;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+.botonMenu{
+  width: 20vw;
+  height: 60px;
+  background-color: grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 50% 0 0;
+  border: 1px solid rgb(104, 104, 104);
+  font-size: 1.25em;
+  cursor: pointer;
+}
+.botonMenu:hover{
+  scale: 1.25;
+  border: none;
+}
+
+#contenido{
+  height: 600px;
+  width: 100%;
+  background: grey;
+}
+img{
+  width: 600px;
+  height: 300px;
+}
+
+.plantilla{
+  display: flex;
+  flex-direction: row;
+  margin: 10px grey;
+  padding: 50px;
+  background: grey;
+}
+
+#EJ5_titulo{
+background: gray;
+color: black;
+font-size: 3em;
+text-align: center;
+text-anchor: 2em;
+}
