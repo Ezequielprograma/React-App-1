@@ -1,7 +1,9 @@
 import React from 'react'; /*importamos la librería */
 import ReactDOM from 'react-dom'; /*importamos la librería */
 import './index.css'; /*Conexion a la hoja de estilos */
+import '../node_modules/font-awesome/css/font-awesome.min.css'; //Hoja de estilos font-awesome
 import reportWebVitals from './reportWebVitals';
+
 
 
 /*Ejercicio 1 */
@@ -46,6 +48,7 @@ import reportWebVitals from './reportWebVitals';
                         <label for="comentario">Mensaje</label><br />
                         <textarea name="mensaje" cols="30" rows="10"></textarea>
                     </p>
+            
                 </fieldset>
             </form>
     );
@@ -89,6 +92,8 @@ import reportWebVitals from './reportWebVitals';
     //renderizamos el elemento en el contenedor con el id "list"
     ReactDOM.render(recetaDePan2,document.getElementById('E4-list-2'));
     ReactDOM.render(<p>Ya haz hecho tu primer pan, ahora disfrútalo.</p>,document.getElementById('E4-SubtituloCuerpo-3'));//parrafo del pie de pagina
+
+        
 
 /*Ejercicio 5 */
     /* En este caso, te solicitamos desarrollar una aplicación con React que cumpla los siguientes requerimientos:
@@ -205,6 +210,40 @@ import reportWebVitals from './reportWebVitals';
         document.getElementById('E5_historia').style.display= 'none';
         document.getElementById('E5_deporte').style.display= 'flex';
         };
+
+/*Ejercicio 6 */
+/*La idea es que este formulario cumpla con los siguientes requerimientos:
+Desplegar tres campos: Nombre de usuario, Correo electrónico, Contraseña, Desplegar un botón con nombre Regístrate.
+Desplegar un título que identifique el formulario. */
+
+var form = React.createElement('form',{action: ''},
+    <h2>Formulario de Registro</h2>,
+    <div class="input-container">
+    <i class="fa fa-user icon"></i>
+    <input class="input-field" type="text" placeholder="Nombre de usuario" name="usrnm"/>
+    </div>,
+    <div class="input-container">
+    <i class="fa fa-envelope icon"></i>
+    <input class="input-field" type="text" placeholder="Correo Electrónico" name="email"/>
+    </div>,
+    <div class="input-container">
+    <i class="fa fa-key icon"></i>
+    <input class="input-field" type="password" placeholder="Contraseña" name="psw"/>
+    </div>,
+    <button type="submit" class="btn"><strong>Regístrate</strong></button>);
+
+ReactDOM.render(<div class='form'>{form}</div>,document.getElementById('EJ6_form'));
+    /*Recomendaciones:
+
+Utiliza los elementos de React y los anidamientos correspondientes.
+Tienes la posibilidad de usar estilos CSS para aplicar estilos a la página.
+Además, tienes a tu disposición los estilos Font Awesome. Particularmente, puedes utilizar los íconos para identificar cada campo del formulario. Por ejemplo:
+fa fa-user icon, para el ícono del nombre de usuario
+fa fa-envelope icon, para el ícono del correo electrónico
+fa fa-key icon, para el ícono de la contraseña
+Recuerda que es necesario modificar los archivos index.html, index.js e index.css para construir las páginas en el ambiente React que estamos usando. */
+    
+    ReactDOM.render(form,{border: '1px solid grey'},document.getElementById('EJ6_form'));
 
 reportWebVitals();
 
