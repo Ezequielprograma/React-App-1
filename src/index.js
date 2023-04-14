@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'; /*importamos la librería */
 import './index.css'; /*Conexion a la hoja de estilos */
 import '../node_modules/font-awesome/css/font-awesome.min.css'; //Hoja de estilos font-awesome
 import reportWebVitals from './reportWebVitals';
-
+import EJ7_form from './form';
 
 
 /*Ejercicio 1 */
@@ -232,7 +232,7 @@ var form = React.createElement('form',{action: ''},
     </div>,
     <button type="submit" class="btn"><strong>Regístrate</strong></button>);
 
-ReactDOM.render(<div class='form'>{form}</div>,document.getElementById('EJ6_form'));
+
     /*Recomendaciones:
 
 Utiliza los elementos de React y los anidamientos correspondientes.
@@ -243,7 +243,17 @@ fa fa-envelope icon, para el ícono del correo electrónico
 fa fa-key icon, para el ícono de la contraseña
 Recuerda que es necesario modificar los archivos index.html, index.js e index.css para construir las páginas en el ambiente React que estamos usando. */
     
-    ReactDOM.render(form,{border: '1px solid grey'},document.getElementById('EJ6_form'));
+ReactDOM.render(<div class='form'>{form}</div>,document.getElementById('EJ6_form'));
+
+
+/*Ejercicio 7 */
+/*En este caso, te solicitamos desarrollar una aplicación con React que presente un formulario y que cumpla los siguientes requerimientos:
+
+El correo electrónico,La contraseña,Un título para el formulario,.
+En cada campo se debe agregar información que le indique al usuario qué información debe colocar
+Utilizar iconos para identificar cada campo del formulario */
+
+ReactDOM.render(<EJ7_form/>,document.getElementById('EJ7_form'));
 
 reportWebVitals();
 
