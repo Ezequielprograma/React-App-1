@@ -2,6 +2,7 @@ import React from 'react' //importamos la libreria React para poder crear el com
 import '../node_modules/font-awesome/css/font-awesome.min.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import './index.css';
+
 class EJ7_form extends React.Component {
     render() {
 
@@ -26,6 +27,7 @@ class EJ7_form extends React.Component {
         );
     }
 };
+
 export default EJ7_form;
 
 /*
@@ -42,21 +44,3 @@ input-group-text, para el campo de texto
 form-control, para darle formato al campo
 Recuerda que es necesario modificar los archivos index.html, index.js e index.css para construir las páginas en el ambiente React que estamos usando.
 */
-/*
-<div class="form-control">
-<div class="input-group">
-
-    <i class="input-group-prepend"></i>
-    <input class="input-group-text" type="text" placeholder="Correo Electrónico" name="email"/>
-
-</div>,
-
-<div class="input-group">
-
-    <i class="input-group-prepend"></i>
-    <input class="input-group-text" type="password" placeholder="Contraseña" name="psw"/>
-
-</div>
-</div>,
-
-<button type="submit" class="btn"><strong>Regístrate</strong></button>*/

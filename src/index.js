@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom'; /*importamos la librería */
 import './index.css'; /*Conexion a la hoja de estilos */
 import '../node_modules/font-awesome/css/font-awesome.min.css'; //Hoja de estilos font-awesome
 import reportWebVitals from './reportWebVitals';
-import EJ7_form from './form';
+import EJ7_form from './form.js';
+import EJ8_form from './form_EJ8';
 
 
 /*Ejercicio 1 */
@@ -56,7 +57,7 @@ import EJ7_form from './form';
 
 /*Ejercicio 4*/
 
-    ReactDOM.render(React.createElement('img',{src: require('./photo.jpg'),alt:'Pan',class: 'img_pan'}),document.getElementById('E4-img'));//imagen
+    ReactDOM.render(React.createElement('img',{src: require('./assets/photo.jpg'),alt:'Pan',class: 'img_pan'}),document.getElementById('E4-img'));//imagen
     ReactDOM.render(React.createElement('h1',{align: 'center'},'Receta de Pan, fácil de hacer'),document.getElementById('E4-tituloCuerpo'));//titulo de pagina
     ReactDOM.render(<p>A continuación se indican los ingredientes necesarios para hacer la receta de pan:</p>,document.getElementById('E4-SubtituloCuerpo1'));//parrafo descriptivo
     //elementos de la lista no ordenada
@@ -116,13 +117,13 @@ import EJ7_form from './form';
     //elementos del cuerpo de la planilla
     var E5_img = React.createFactory('img');//definimos la variable que va  a ser la fabrica
     var E5_p = React.createFactory('p');//definimos la variable que va  a ser la fabrica
-    var E5_imgFisica = E5_img({src: require('./fisica.jpg'),alt:'Fisica'});
-    var E5_imgQuimica = E5_img({src: require('./quimica.png'),alt:'Quimica'});
-    var E5_imgBiologia = E5_img({src: require('./biologia.jpg'),alt:'Biologia'});
-    var E5_imgIngles = E5_img({src: require('./ingles.jpg'),alt:'Ingles'});
-    var E5_imgSociales = E5_img({src: require('./sociales.jpg'),alt:'Sociales'});
-    var E5_imgHistoria = E5_img({src: require('./historia.jpg'),alt:'Historia'});
-    var E5_imgDeporte = E5_img({src: require('./deporte.jpg'),alt:'Deporte'});
+    var E5_imgFisica = E5_img({src: require('./assets/fisica.jpg'),alt:'Fisica'});
+    var E5_imgQuimica = E5_img({src: require('./assets/quimica.png'),alt:'Quimica'});
+    var E5_imgBiologia = E5_img({src: require('./assets/biologia.jpg'),alt:'Biologia'});
+    var E5_imgIngles = E5_img({src: require('./assets/ingles.jpg'),alt:'Ingles'});
+    var E5_imgSociales = E5_img({src: require('./assets/sociales.jpg'),alt:'Sociales'});
+    var E5_imgHistoria = E5_img({src: require('./assets/historia.jpg'),alt:'Historia'});
+    var E5_imgDeporte = E5_img({src: require('./assets/deporte.jpg'),alt:'Deporte'});
     var E5_reseñaFisica = E5_p("",'Ciencia que estudia las propiedades de la materia y de la energía y establece las leyes que explican los fenómenos naturales, excluyendo los que modifican la estructura molecular de los cuerpos.');
     var E5_reseñaQuimica = E5_p("",'La química es la ciencia natural que estudia la composición, estructura y propiedades de la materia ya sea en forma de elementos, especies, compuestos, mezclas u otras sustancias, así como los cambios que estas experimentan durante las reacciones y su relación con la energía química.');
     var E5_reseñaBiologia = E5_p("",'La biología es la ciencia que estudia los seres vivos. Esto incluye su origen y evolución, así como las características de animales, plantas, hongos y microorganismos, sus procesos vitales, su comportamiento y su interacción con el medio ambiente.');
@@ -140,81 +141,42 @@ import EJ7_form from './form';
     ReactDOM.render([E5_reseñaDeporte,E5_imgDeporte],document.getElementById('E5_deporte'));
 
     //agregación de estilos de los elementos de la planilla
-    document.getElementById('E5_quimica').style.display= 'none';
-    document.getElementById('E5_biologia').style.display= 'none';
-    document.getElementById('E5_ingles').style.display= 'none';
-    document.getElementById('E5_sociales').style.display= 'none';
-    document.getElementById('E5_historia').style.display= 'none';
-    document.getElementById('E5_deporte').style.display= 'none';
+    document.getElementById('E5_quimica','E5_biologia','E5_ingles','E5_sociales','E5_historia','E5_deporte').style.display= 'none';
     //funciones
-    function mostrarFisica(){
-        document.getElementById('E5_fisica').style.display= 'flex';
-        document.getElementById('E5_quimica').style.display= 'none';
-        document.getElementById('E5_biologia').style.display= 'none';
-        document.getElementById('E5_ingles').style.display= 'none';
-        document.getElementById('E5_sociales').style.display= 'none';
-        document.getElementById('E5_historia').style.display= 'none';
-        document.getElementById('E5_deporte').style.display= 'none';
-        };
-        function mostrarQuimica(){
-        document.getElementById('E5_fisica').style.display= 'none';
-        document.getElementById('E5_quimica').style.display= 'flex';
-        document.getElementById('E5_biologia').style.display= 'none';
-        document.getElementById('E5_ingles').style.display= 'none';
-        document.getElementById('E5_sociales').style.display= 'none';
-        document.getElementById('E5_historia').style.display= 'none';
-        document.getElementById('E5_deporte').style.display= 'none'; 
-        };
-        function mostrarBiologia(){
-        document.getElementById('E5_fisica').style.display= 'none';
-        document.getElementById('E5_quimica').style.display= 'none';
-        document.getElementById('E5_biologia').style.display= 'flex';
-        document.getElementById('E5_ingles').style.display= 'none';
-        document.getElementById('E5_sociales').style.display= 'none';
-        document.getElementById('E5_historia').style.display= 'none';
-        document.getElementById('E5_deporte').style.display= 'none';
-        };
-        function mostrarIngles(){
-        document.getElementById('E5_fisica').style.display= 'none';
-        document.getElementById('E5_quimica').style.display= 'none';
-        document.getElementById('E5_biologia').style.display= 'none';
-        document.getElementById('E5_ingles').style.display= 'flex';
-        document.getElementById('E5_sociales').style.display= 'none';
-        document.getElementById('E5_historia').style.display= 'none';
-        document.getElementById('E5_deporte').style.display= 'none';
-        };
-        function mostrarSociales(){
-        document.getElementById('E5_fisica').style.display= 'none';
-        document.getElementById('E5_quimica').style.display= 'none';
-        document.getElementById('E5_biologia').style.display= 'none';
-        document.getElementById('E5_ingles').style.display= 'none';
-        document.getElementById('E5_sociales').style.display= 'flex';
-        document.getElementById('E5_historia').style.display= 'none';
-        document.getElementById('E5_deporte').style.display= 'none'; 
-        };
-        function mostrarHistoria(){
-        document.getElementById('E5_fisica').style.display= 'none';
-        document.getElementById('E5_quimica').style.display= 'none';
-        document.getElementById('E5_biologia').style.display= 'none';
-        document.getElementById('E5_ingles').style.display= 'none';
-        document.getElementById('E5_sociales').style.display= 'none';
-        document.getElementById('E5_historia').style.display= 'flex';
-        document.getElementById('E5_deporte').style.display= 'none';
-        };
-        function mostrarDeporte(){
-        document.getElementById('E5_fisica').style.display= 'none';
-        document.getElementById('E5_quimica').style.display= 'none';
-        document.getElementById('E5_biologia').style.display= 'none';
-        document.getElementById('E5_ingles').style.display= 'none';
-        document.getElementById('E5_sociales').style.display= 'none';
-        document.getElementById('E5_historia').style.display= 'none';
-        document.getElementById('E5_deporte').style.display= 'flex';
-        };
+   
+    function E5_displayNone(nombre){
+        var E5_display = ['E5_fisica','E5_quimica','E5_biologia','E5_ingles','E5_sociales','E5_historia','E5_deporte'];
+        for(var i = 0;i<E5_display.length;i++){
+            if(nombre === E5_display[i]){
+                document.getElementById(E5_display[i]).style.display='flex';
+            }else{
+                document.getElementById(E5_display[i]).style.display='none';
+            }
+        }
+    }
+
+    function mostrarFisica(){ E5_displayNone('E5_fisica') };
+    function mostrarQuimica(){E5_displayNone('E5_quimica')};
+    function mostrarBiologia(){E5_displayNone('E5_biologia')};
+    function mostrarIngles(){E5_displayNone('E5_ingles')};
+    function mostrarSociales(){ E5_displayNone('E5_sociales')};
+    function mostrarHistoria(){ E5_displayNone('E5_historia')};
+    function mostrarDeporte(){ E5_displayNone('E5_deporte')};
 
 /*Ejercicio 6 */
 /*La idea es que este formulario cumpla con los siguientes requerimientos:
 Desplegar tres campos: Nombre de usuario, Correo electrónico, Contraseña, Desplegar un botón con nombre Regístrate.
 Desplegar un título que identifique el formulario. */
+
+/*Recomendaciones:
+
+Utiliza los elementos de React y los anidamientos correspondientes.
+Tienes la posibilidad de usar estilos CSS para aplicar estilos a la página.
+Además, tienes a tu disposición los estilos Font Awesome. Particularmente, puedes utilizar los íconos para identificar cada campo del formulario. Por ejemplo:
+fa fa-user icon, para el ícono del nombre de usuario
+fa fa-envelope icon, para el ícono del correo electrónico
+fa fa-key icon, para el ícono de la contraseña
+Recuerda que es necesario modificar los archivos index.html, index.js e index.css para construir las páginas en el ambiente React que estamos usando. */
 
 var form = React.createElement('form',{action: ''},
     <h2>Formulario de Registro</h2>,
@@ -232,17 +194,6 @@ var form = React.createElement('form',{action: ''},
     </div>,
     <button type="submit" class="btn"><strong>Regístrate</strong></button>);
 
-
-    /*Recomendaciones:
-
-Utiliza los elementos de React y los anidamientos correspondientes.
-Tienes la posibilidad de usar estilos CSS para aplicar estilos a la página.
-Además, tienes a tu disposición los estilos Font Awesome. Particularmente, puedes utilizar los íconos para identificar cada campo del formulario. Por ejemplo:
-fa fa-user icon, para el ícono del nombre de usuario
-fa fa-envelope icon, para el ícono del correo electrónico
-fa fa-key icon, para el ícono de la contraseña
-Recuerda que es necesario modificar los archivos index.html, index.js e index.css para construir las páginas en el ambiente React que estamos usando. */
-    
 ReactDOM.render(<div class='form'>{form}</div>,document.getElementById('EJ6_form'));
 
 
@@ -254,6 +205,10 @@ En cada campo se debe agregar información que le indique al usuario qué inform
 Utilizar iconos para identificar cada campo del formulario */
 
 ReactDOM.render(<EJ7_form/>,document.getElementById('EJ7_form'));
+
+/*Ejercicio 8 */
+
+ReactDOM.render(<EJ8_form/>,document.getElementById('EJ8_form'));
 
 reportWebVitals();
 
