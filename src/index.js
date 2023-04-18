@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import Hola from './Hola.js';
 import Item from './item.js';
 import Lista from './lista.js';
+import App2 from './AppL5.js';
+import App3 from './AppL5_b.js'
 
 /*LECCION 1: Creación y renderización de elementos */
 
@@ -129,4 +131,10 @@ itemsValues.forEach((item,id)=>{
 
 var lista2 = <Lista>{items}</Lista>
 ReactDOM.render(lista2,document.getElementById('L4-lista2'));
+
+/*LECCIÓN 5: Identificando y creando componentes en React*/
+/*Estados de los componentes: La explicación de esta lección y el ejemplificado está en el archivo AppL5.js*/
+ReactDOM.render(<App2 isHidden/>,document.getElementById('L5-App2'));//le indicamos que tiene un apropiedad "isHidden" con valor true, es decir que el contenido no se muestra
+/*Aplicando dinamismo a la aplicación usando  los estados*/
+ReactDOM.render(<App3/>,document.getElementById('L5-App3'));
 reportWebVitals();
