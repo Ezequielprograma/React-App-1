@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import EJ7_form from './form.js';
 import EJ8_form from './form_EJ8';
 import App_Ej9 from './App_Ej9';
+import App_Ej10 from './App_Ej10';
 
 
 /*Ejercicio 1 */
@@ -214,5 +215,9 @@ ReactDOM.render(<EJ8_form/>,document.getElementById('EJ8_form'));
 /*Ejercicio 9 */
 
 ReactDOM.render(<App_Ej9/>,document.getElementById('EJ9'));
+
+/*Ejercicio 10 */
+<App_Ej10></App_Ej10>
+ReactDOM.render(<App_Ej10 oculto={true} mensaje='Este es el estado del componente, entregado desde el padre.'/>,document.getElementById('EJ10'));
 reportWebVitals();
 

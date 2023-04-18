@@ -12,7 +12,6 @@ class App_Ej9 extends React.Component{
 
 
     render(){
-
         const cabecera = [
             <div className="App">
             <header className="App-header">
