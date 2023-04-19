@@ -8,6 +8,8 @@ import Item from './item.js';
 import Lista from './lista.js';
 import App2 from './AppL5.js';
 import App3 from './AppL5_b.js'
+import AppL6 from './AppL6';
+import AppL6_b from './AppL6_b';
 
 /*LECCION 1: Creación y renderización de elementos */
 
@@ -137,4 +139,11 @@ ReactDOM.render(lista2,document.getElementById('L4-lista2'));
 ReactDOM.render(<App2 isHidden/>,document.getElementById('L5-App2'));//le indicamos que tiene un apropiedad "isHidden" con valor true, es decir que el contenido no se muestra
 /*Aplicando dinamismo a la aplicación usando  los estados*/
 ReactDOM.render(<App3/>,document.getElementById('L5-App3'));
+
+/*LECCIÓN 6:Manejo del ciclo de vida de los componentes: Montaje */
+
+/*Funcionamiento del setState con multiples llamadas: La explicación de esta lección y el ejemplificado está en el archivo AppL6.js */
+ReactDOM.render(<AppL6/>,document.getElementById('L6-App'));
+/*Metodo: componentDidMount */
+ReactDOM.render(<AppL6_b tiempo='7'/>,document.getElementById('L6-App_b'));
 reportWebVitals();
