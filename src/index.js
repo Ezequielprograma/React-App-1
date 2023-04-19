@@ -7,6 +7,7 @@ import EJ7_form from './form.js';
 import EJ8_form from './form_EJ8';
 import App_Ej9 from './App_Ej9';
 import App_Ej10 from './App_Ej10';
+import App_Ej11 from './App_Ej11';
 
 
 /*Ejercicio 1 */
@@ -217,7 +218,29 @@ ReactDOM.render(<EJ8_form/>,document.getElementById('EJ8_form'));
 ReactDOM.render(<App_Ej9/>,document.getElementById('EJ9'));
 
 /*Ejercicio 10 */
-<App_Ej10></App_Ej10>
+
 ReactDOM.render(<App_Ej10 oculto={true} mensaje='Este es el estado del componente, entregado desde el padre.'/>,document.getElementById('EJ10'));
 reportWebVitals();
 
+/*Ejercicio 11 */
+
+
+const libros = ['Hacking with React',
+    'React Native Express',
+    'Mastering Modular JavaScript',
+    'Practical Modern JavaScript',
+    'U&I with React',
+    'Developing with Angular',
+    'The Road to learn React',
+    'React.js for the Visual Learner',
+    'Recipes with Angular.js',
+    'Exploring ES6',
+    'What You Need to Know about JavaScript',
+    'Object-Oriented JavaScript – Second Edition',
+    'The JavaScript Way',
+    'Thinking in JavaScript',
+    'What You Need To Know About Node.js',
+    'Angular 2 Succinctly']
+
+ReactDOM.render(<App_Ej11 cantidad={10} libros={libros} />, document.getElementById('EJ11'));
+reportWebVitals();
