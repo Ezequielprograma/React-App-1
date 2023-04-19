@@ -8,6 +8,7 @@ import EJ8_form from './form_EJ8';
 import App_Ej9 from './App_Ej9';
 import App_Ej10 from './App_Ej10';
 import App_Ej11 from './App_Ej11';
+import AppEJ12 from './App_Ej12';
 
 
 /*Ejercicio 1 */
@@ -243,4 +244,7 @@ const libros = ['Hacking with React',
     'Angular 2 Succinctly']
 
 ReactDOM.render(<App_Ej11 cantidad={10} libros={libros} />, document.getElementById('EJ11'));
+
+/*Ejercicio 12 */
+ReactDOM.render(<AppEJ12/>, document.getElementById('EJ12'));
 reportWebVitals();
