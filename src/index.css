@@ -72,6 +72,12 @@ text-anchor: 2em;
   align-items: center;
 }
 
+.centrado{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 * {box-sizing: border-box;}
 
 /* Style the input container */

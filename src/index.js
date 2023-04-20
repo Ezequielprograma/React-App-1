@@ -9,6 +9,7 @@ import App_Ej9 from './App_Ej9';
 import App_Ej10 from './App_Ej10';
 import App_Ej11 from './App_Ej11';
 import AppEJ12 from './App_Ej12';
+import AppEJ13 from './App_Ej13';
 
 
 /*Ejercicio 1 */
@@ -247,4 +248,6 @@ ReactDOM.render(<App_Ej11 cantidad={10} libros={libros} />, document.getElementB
 
 /*Ejercicio 12 */
 ReactDOM.render(<AppEJ12/>, document.getElementById('EJ12'));
+/*Ejercicio 13 */
+ReactDOM.render(<AppEJ13 tiempo='10'/>, document.getElementById('EJ13'));
 reportWebVitals();
