@@ -10,6 +10,7 @@ import App2 from './AppL5.js';
 import App3 from './AppL5_b.js'
 import AppL6 from './AppL6';
 import AppL6_b from './AppL6_b';
+import App7 from './AppL7';
 
 /*LECCION 1: Creación y renderización de elementos */
 
@@ -146,4 +147,8 @@ ReactDOM.render(<App3/>,document.getElementById('L5-App3'));
 ReactDOM.render(<AppL6/>,document.getElementById('L6-App'));
 /*Metodo: componentDidMount */
 ReactDOM.render(<AppL6_b tiempo='7'/>,document.getElementById('L6-App_b'));
+
+/*LECCIÓN 7:  Método componentDidUpdate y dinamismo */
+ReactDOM.render(<App7 tiempo='7'/>,document.getElementById('L7-App'));
+
 reportWebVitals();
