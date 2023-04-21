@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import '../node_modules/bootstrap/dist/css/bootstrap.css'
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import '../node_modules/font-awesome/css/font-awesome.css';
 import './App.css';
 
-class App7 extends Component {
+class App8 extends Component {
   constructor(props){
     super(props)
     this.state = {
-      contador:0,
+      contador: 0,
       tiempo:this.props.tiempo,
       avance:0,
       fa_spin:'',
@@ -17,9 +17,8 @@ class App7 extends Component {
 
   start = () =>{
     clearInterval(this.interval)
-    this.interval = setInterval(() => this.tick(),1000)
+    this.interval = setInterval(() => this.tick(),100)
     this.setState({
-      start:true,
       tiempo:this.tiempo.value,
       contador:0,
       avance:0,
@@ -29,7 +28,7 @@ class App7 extends Component {
   }
 
   restart = () => {
-    this.interval = setInterval(() => this.tick(),1000)
+    this.interval = setInterval(() => this.tick(),100)
     this.setState({
       fa_spin:'fa-spin',
       boton_state:'Reiniciado'
@@ -48,6 +47,7 @@ class App7 extends Component {
     if (this.state.avance>=100)
     {
       clearInterval(this.interval)
+      this.setState({avance:0})
       this.boton_stop.className='btn-group pb-3 position hidden'
       this.boton_restart.className='btn-group pb-3 position hidden'
       this.boton_start.className='btn-group pb-3 position'
@@ -55,17 +55,18 @@ class App7 extends Component {
     else
     {
       this.setState((prevState) => ({
-      contador: prevState.contador + 1,
-      avance: ((prevState.contador + 1)/prevState.tiempo)*100
+      contador: prevState.contador + 1/10,
+      avance: ((prevState.contador + 1/10)/prevState.tiempo)*100 > 100 ? 100 :
+              ((prevState.contador + 1/10)/prevState.tiempo)*100
     }))
     }
   }
 
   componentDidUpdate(){
-    if (this.state.avance>=100)
-      this.spinner.className='fa fa-spinner font-size'
+    if (this.state.avance>=100){this.spinner.className='fa fa-spinner font-size';}
+      
 
-      switch(this.state.boton_state){
+    switch(this.state.boton_state){
         case 'Iniciado':
           this.boton_start.className='btn-group pb-3 position hidden'
           this.boton_stop.className='btn-group pb-3 position'
@@ -84,6 +85,24 @@ class App7 extends Component {
       }
   }
 
+  shouldComponentUpdate(nextState){
+    if (nextState.avance !== this.state.avance)
+      return true
+    else
+      return false
+  }
+
+  componentWillMount(){
+    this.setState({
+      contador:0,
+      tiempo:0,
+      avance:0,
+      fa_spin:'',
+      boton_state:''
+    })
+    clearInterval(this.interval)
+  }
+
   render() {
     return(
     <div className='border border-primary m-3 p-3'> 
@@ -99,7 +118,8 @@ class App7 extends Component {
             </div>
           </div>
           <div className='btn-group pb-3 position' ref = {div => this.boton_start = div}>
-            <a className="btn btn-primary" onClick={this.start}>
+            <a className="btn btn-primary" onClick={this.start}
+            >
             <i className="fa fa-play-circle fa-fw"></i>Iniciar</a>
           </div>
           <div className='btn-group pb-3 position hidden' ref = {div => this.boton_stop = div}>
@@ -111,18 +131,19 @@ class App7 extends Component {
             <i className="fa fa-play-circle fa-fw"></i>Reiniciar</a>
           </div>
       </div>
-      <p className='font-weight-light'>Segundos trancurridos: {this.state.contador}</p>
+      <p className='font-weight-light'>Segundos trancurridos: {this.state.contador.toFixed(0)}</p>
       <div className="progress m-3">
         <p className='pr-2'><i className={"fa fa-spinner font-size "+this.state.fa_spin}
         ref ={i => this.spinner = i}></i></p>
-        <div class="progress-bar" role="progressbar"  
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"  
         aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"
-        style={{width:this.state.avance+'%'}}>{this.state.avance.toFixed(2)}%</div>
+        style={{width:this.state.avance+'%'}}>{this.state.avance.toFixed(0)}%</div>
       </div>
     </div>
     );
   }
   
-  }
+}
 
-export default App7;
+
+export default App8;

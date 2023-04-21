@@ -1,32 +1,35 @@
 import React from 'react'; /*importamos la librería */
 import ReactDOM from 'react-dom'; /*importamos la librería */
 import './index.css'; /*Conexion a la hoja de estilos */
-import App from './App'; /*Importamos la clase APP */
+//import App from './App'; /*Importamos la clase APP */
 import reportWebVitals from './reportWebVitals';
-import Hola from './Hola.js';
-import Item from './item.js';
-import Lista from './lista.js';
-import App2 from './AppL5.js';
-import App3 from './AppL5_b.js'
-import AppL6 from './AppL6';
-import AppL6_b from './AppL6_b';
-import App7 from './AppL7';
+//import Hola from './Hola.js';
+//import Item from './item.js';
+//import Lista from './lista.js';
+//import App2 from './AppL5.js';
+//import App3 from './AppL5_b.js'
+//import AppL6 from './AppL6';
+//import AppL6_b from './AppL6_b';
+//import App7 from './AppL7.js';
+import App8 from './AppL8.js';
+import ErrorBoundary from './ErrorBoundary.js';
+
 
 /*LECCION 1: Creación y renderización de elementos */
 
 /*Forma 1 */
-  ReactDOM.render(<App/>,document.getElementById('root'));
+//  ReactDOM.render(<App/>,document.getElementById('root'));
 
 /*Forma 2 */
-  ReactDOM.render(<div>Nuevo Nodo Html</div>,document.getElementById("html"));
+//  ReactDOM.render(<div>Nuevo Nodo Html</div>,document.getElementById("html"));
 
 /*Forma 3 */
-  const element = (<div> Son las {new Date().toLocaleTimeString()}</div>);
-  ReactDOM.render(element,document.getElementById("time"));
+//  const element = (<div> Son las {new Date().toLocaleTimeString()}</div>);
+//  ReactDOM.render(element,document.getElementById("time"));
 
 /*Forma 4 */
-  const element1 = React.createElement('p',{align: 'center'},'Nuevo Parrafo');
-  ReactDOM.render(element1,document.getElementById('parrafo'));
+//  const element1 = React.createElement('p',{align: 'center'},'Nuevo Parrafo');
+//  ReactDOM.render(element1,document.getElementById('parrafo'));
 
 
 
@@ -107,48 +110,56 @@ import App7 from './AppL7';
 
 //Ejemplo de un componente 
 //Forma 1 de usar  y renderizar la clase Hola
-ReactDOM.render(<Hola name='NextU...'/>,document.getElementById('L4-hola'))//Renderizamos la clase Hola a la cual a su vez le pasamos la propiedad name
+//ReactDOM.render(<Hola name='NextU...'/>,document.getElementById('L4-hola'))//Renderizamos la clase Hola a la cual a su vez le pasamos la propiedad name
 //Forma 2 de usar y renderizar la clase Holas
-var hola = React.createElement(Hola,{name: 'NextU, ahora estas usando createElements',align:'Right'},'');
-ReactDOM.render(hola,document.getElementById('L4-hola2'));
+//var hola = React.createElement(Hola,{name: 'NextU, ahora estas usando createElements',align:'Right'},'');
+//ReactDOM.render(hola,document.getElementById('L4-hola2'));
 
 /*LECCIÓN 4: Componentes anidados en React */
 
 //Forma 1: componentes anidados
-var item1 = <Item itemID='1'>Uno</Item>;
-var item2 = <Item itemID='2'>Dos</Item>;
-var item3 = <Item itemID='3'>Tres</Item>;
-var item4 = <Item itemID='4'>Cuatro</Item>;
-var item5 = <Item itemID='5'>Cinco</Item>;
-var item6 = <Item itemID='6'>Seis</Item>;
+//var item1 = <Item itemID='1'>Uno</Item>;
+//var item2 = <Item itemID='2'>Dos</Item>;
+//var item3 = <Item itemID='3'>Tres</Item>;
+//var item4 = <Item itemID='4'>Cuatro</Item>;
+//var item5 = <Item itemID='5'>Cinco</Item>;
+//var item6 = <Item itemID='6'>Seis</Item>;
 
-var lista = <Lista>{[item1,item2,item3,item4,item5,item6]}</Lista>;
-ReactDOM.render(lista,document.getElementById('L4-lista'));
+//var lista = <Lista>{[item1,item2,item3,item4,item5,item6]}</Lista>;
+//ReactDOM.render(lista,document.getElementById('L4-lista'));
 //Forma 2: componentes anidados
 
-var items = [];
-var itemsValues= ['Uno','Dos','Tres','Cuatro','Cinco','Seis'];
-itemsValues.forEach((item,id)=>{
-    items[id]=<Item itemID={id}>{item}</Item>
-})
+//var items = [];
+//var itemsValues= ['Uno','Dos','Tres','Cuatro','Cinco','Seis'];
+//itemsValues.forEach((item,id)=>{
+//    items[id]=<Item itemID={id}>{item}</Item>
+//})
 
-var lista2 = <Lista>{items}</Lista>
-ReactDOM.render(lista2,document.getElementById('L4-lista2'));
+//var lista2 = <Lista>{items}</Lista>
+//ReactDOM.render(lista2,document.getElementById('L4-lista2'));
 
 /*LECCIÓN 5: Identificando y creando componentes en React*/
 /*Estados de los componentes: La explicación de esta lección y el ejemplificado está en el archivo AppL5.js*/
-ReactDOM.render(<App2 isHidden/>,document.getElementById('L5-App2'));//le indicamos que tiene un apropiedad "isHidden" con valor true, es decir que el contenido no se muestra
+//ReactDOM.render(<App2 isHidden/>,document.getElementById('L5-App2'));//le indicamos que tiene un apropiedad "isHidden" con valor true, es decir que el contenido no se muestra
 /*Aplicando dinamismo a la aplicación usando  los estados*/
-ReactDOM.render(<App3/>,document.getElementById('L5-App3'));
+//ReactDOM.render(<App3/>,document.getElementById('L5-App3'));
 
 /*LECCIÓN 6:Manejo del ciclo de vida de los componentes: Montaje */
 
 /*Funcionamiento del setState con multiples llamadas: La explicación de esta lección y el ejemplificado está en el archivo AppL6.js */
-ReactDOM.render(<AppL6/>,document.getElementById('L6-App'));
+//ReactDOM.render(<AppL6/>,document.getElementById('L6-App'));
 /*Metodo: componentDidMount */
-ReactDOM.render(<AppL6_b tiempo='7'/>,document.getElementById('L6-App_b'));
+//ReactDOM.render(<AppL6_b tiempo='7'/>,document.getElementById('L6App_b'));
 
 /*LECCIÓN 7:  Método componentDidUpdate y dinamismo */
-ReactDOM.render(<App7 tiempo='7'/>,document.getElementById('L7-App'));
+//ReactDOM.render(<App7 tiempo='7'/>,document.getElementById('L7-App'));
 
+/*LECCIÓN 8: Avanzando en el ciclo de vida del estado de un componente en React */
+//ReactDOM.render(<App8/>,document.getElementById('L8-App'));
+
+/*Métodos shouldComponentUpdate y componentWillUnmount */
+//ReactDOM.render(<ErrorBoundary><App8 /></ErrorBoundary>,document.getElementById('L8B'));
+
+/* Error Boundary y método componentDidCatch */
+ReactDOM.render(<ErrorBoundary><App8/></ErrorBoundary>,document.getElementById('L8B'));
 reportWebVitals();
